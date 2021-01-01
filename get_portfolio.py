@@ -32,6 +32,7 @@ def get_portfolio():
     # Calculate the entire value of portfolio
     portfolio["Portfolio"] = current_portfolio.sum(axis=1)
 
+    # Pearson correlation coefficient
     corr_df = portfolio.corr(method='pearson')
 
     corr_df.head().reset_index()
