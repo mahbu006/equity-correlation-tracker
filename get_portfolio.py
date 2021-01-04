@@ -1,3 +1,4 @@
+from flask import Flask, render_template
 import numpy as np
 import pandas as pd
 import pandas_datareader as web
@@ -6,7 +7,10 @@ import matplotlib.pyplot as plt
 import seaborn
 import yfinance as yf
 
+app = Flask(__name__)
 
+
+@app.route('/')
 def get_portfolio():
 
     tickers = ['AAPL', 'GE', 'LULU', 'TSLA', 'AAL', 'PFE', 'VRTX', 'WFC']
@@ -47,9 +51,12 @@ def get_portfolio():
                     vmin=-1.0, mask=mask, linewidths=2.5)
     plt.yticks(rotation=0)
     plt.xticks(rotation=90)
-    plt.title('Equity Portfolio Correlation Tracker', fontweight='bold',
-              color='royalblue', fontsize='18')
-    plt.show()
+    plt.title('Equity Portfolio Correlation Tracker',
+              fontweight='bold', color='royalblue', fontsize='18')
+    plt.savefig('static/images/plot.png')
+
+    return render_template('plot.html', url='/static/images/plot.png')
 
 
-get_portfolio()
+if __name__ == '__main__':
+    app.run()

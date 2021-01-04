@@ -1,0 +1,19 @@
+{
+  "name": "equity-correlation-tracker",
+  "version": "1.0.0",
+  "description": "Simple equity returns correlation tracker that computes the Pearson correlation coefficient against the returns of a customized portfolio and generates a heatmap built with Python, Seaborn, and Yahoo Finance API.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mahbu006/equity-correlation-tracker.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mahbu006/equity-correlation-tracker/issues"
+  },
+  "homepage": "https://github.com/mahbu006/equity-correlation-tracker#readme"
+}
